@@ -45,7 +45,7 @@ export class UserController{
     public async updateUserImage(req:any,res:any){
         try {
             const id = req.params.id;
-            const image = req.file.filename;
+            const image = req.file.path;
             const data = await this.userService.updateUserImage(id,image);
             res.send({success: true, data});
             res.status(200);
